@@ -25,7 +25,7 @@ def clave_diccionario(diccionario, key):
 
 def buscar_archivo(nombre_archivo):
     try:
-        with open(nombre_archivo, "r") as archivo:
+        with open(nombre_archivo, "r"):
             print(f"El archivo '{nombre_archivo}' fue abierto exitosamente.")
     except FileNotFoundError:
         print(f"El archivo '{nombre_archivo}' no existe. Creándolo ahora...")
@@ -45,7 +45,7 @@ def dividir_2(numerador, denominador):
         den = float(denominador)
         resultado = num / den
     except (ZeroDivisionError, ValueError) as e:
-        print(f"¡Ha ocurrido un error!")
+        print("¡Ha ocurrido un error!")
         if isinstance(e, ZeroDivisionError):
             print("El error específico es: No puedes dividir por cero.")
         elif isinstance(e, ValueError):
